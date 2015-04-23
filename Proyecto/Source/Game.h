@@ -26,6 +26,9 @@ public:
 
 
 private:
+	///Animacion menu
+	GLfloat translate_menu_x;
+	////////////////////////
 	void CargandoObjetos();
 	void IniciandoVideo();
 	void MoverEnemigo();

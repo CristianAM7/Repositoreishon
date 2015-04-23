@@ -9,6 +9,10 @@ CGame::CGame(){
 	tiempoFrameInicial = CERO;
 	tick = CERO;
 	atexit(SDL_Quit);
+
+	///animacion menu
+	translate_menu_x = 0;
+	////////////////////
 }
 
 void CGame::IniciandoVideo()
@@ -320,6 +324,12 @@ void CGame::MenuActualizar()
 
 void CGame::MenuPintar()
 {
+	///animacion menu
+	///translate_menu_x--;
+	menuFondo->TranslateXY(translate_menu_x--, 0.f);
+	if (translate_menu_x < -1279)
+		translate_menu_x = 0.f;
+	/////////////////
 	menuFondo->Draw();
 	textoTitulo->TranslateXYDraw(WIDTH_SCREEN / 8, 0);
 
